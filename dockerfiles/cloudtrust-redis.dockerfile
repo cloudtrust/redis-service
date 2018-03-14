@@ -42,7 +42,7 @@ WORKDIR /cloudtrust/config
 RUN git checkout ${config_git_tag}
 
 WORKDIR /cloudtrust/config
-RUN install -v -m0755 -o redis -g redis deploy/etc/redis/redis.conf /etc/redis/redis.conf
+RUN install -v -m0755 -o redis -g redis deploy/etc/redis/redis.conf /etc/redis.conf
 
 ##
 ##  Enable services
