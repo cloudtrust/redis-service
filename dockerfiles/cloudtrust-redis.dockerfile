@@ -8,7 +8,8 @@ ARG config_repo
 ###  Prepare the system stuff
 ###
 
-RUN dnf -y install redis && \
+RUN dnf update -y && \
+    dnf -y install redis && \
     dnf clean all
 
 RUN install -d -v -m755 /var/lib/redis -o redis -g redis && \
