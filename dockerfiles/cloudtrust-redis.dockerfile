@@ -4,12 +4,14 @@ ARG redis_service_git_tag
 ARG config_git_tag
 ARG config_repo
 
+ARG redis_version=4.0.10-1.fc27
+
 ###
 ###  Prepare the system stuff
 ###
 
 RUN dnf update -y && \
-    dnf -y install redis && \
+    dnf -y install redis-$redis_version && \
     dnf clean all
 
 RUN install -d -v -m755 /var/lib/redis -o redis -g redis && \
